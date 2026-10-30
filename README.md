@@ -283,11 +283,6 @@ Every script follows the same simple pattern:
 
 ---
 
-## 👥 Team
-
-**Ocean Star ⭐**
-
-_Add team member names and roles here._
 
 ## 🙏 Acknowledgements
 
