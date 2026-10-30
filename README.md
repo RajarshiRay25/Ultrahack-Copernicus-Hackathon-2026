@@ -3,7 +3,7 @@
 
 **Rajarshi Ray - Tampere University**  || 
 **Yunseon Lee -  University of Helsinki** || 
-**Name: Rodrigo Andrés Jara Godoy -  Change of North Chile**
+**Rodrigo Andrés Jara Godoy -  Change of North Chile**
 
 **Team Ocean Star ⭐ | Copernicus Marine Service Hackathon 2026**
 
