@@ -1,0 +1,6 @@
+zone,median_sst_degc,pixels
+Whole protected area,14.992,218
+Coastal strip (0-10 km),14.795,25
+Inner zone (10-25 km),14.818,58
+Middle zone (25-50 km),15.099,90
+Offshore reference (50-150 km),15.819,712

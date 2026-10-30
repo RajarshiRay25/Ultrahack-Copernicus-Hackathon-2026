@@ -1,0 +1,13 @@
+month,northward_wind_mean_m_s,category,weakest_year,strongest_year,eastward_wind_mean_m_s,years
+Jan,6.37,Moderate,4.65,7.22,0.34,12
+Feb,6.52,Moderate,5.63,7.63,0.21,12
+Mar,6.8,Moderate,5.78,8.1,0.12,12
+Apr,6.6,Moderate,5.35,8.22,0.08,12
+May,5.45,Moderate,2.38,7.02,0.05,12
+Jun,5.46,Moderate,1.15,8.08,0.34,12
+Jul,6.1,Moderate,3.74,8.11,0.29,11
+Aug,6.58,Moderate,4.41,8.82,0.42,11
+Sep,7.06,Strong,5.05,8.36,0.62,11
+Oct,7.68,Strong,5.43,9.38,0.67,11
+Nov,7.04,Strong,4.27,8.16,0.68,11
+Dec,6.89,Moderate,5.28,8.64,0.48,11

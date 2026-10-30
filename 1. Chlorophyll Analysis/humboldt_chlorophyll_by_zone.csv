@@ -1,0 +1,6 @@
+zone,median_chlorophyll_mg_m3,pixels
+Whole protected area,0.941,315
+Coastal strip (0-10 km),2.949,43
+Inner zone (10-25 km),1.38,86
+Middle zone (25-50 km),0.836,132
+Offshore (over 50 km),0.684,54

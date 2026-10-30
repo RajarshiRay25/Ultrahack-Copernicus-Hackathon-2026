@@ -1,0 +1,5 @@
+zone,sightings,area_km2,sightings_per_100km2
+Coast & islands (0-10 km),518,806,64.23
+Inner zone (10-25 km),107,1613,6.63
+Middle zone (25-50 km),10,2476,0.4
+Offshore (over 50 km),1,1013,0.1
