@@ -1,0 +1,259 @@
+# 🐧 Humboldt Archipelago: Following the Ocean's Engine from Wind to Wildlife
+
+**Team Ocean Star ⭐ | Copernicus Marine Service Hackathon 2026**
+
+> Using free satellite data from Copernicus Marine, we show **where** and **when** Chile's Humboldt Archipelago marine protected area is most alive, and **why**. The result is simple, transparent evidence that managers can use to decide where and when to focus protection.
+
+---
+
+## 📌 In short
+
+- **Wind** blows north along the coast all year, strongest in **September–November**.
+- That wind brings **cold, nutrient-rich water** up from the deep near the coast (upwelling).
+- Tiny sea plants (phytoplankton) feed on those nutrients: **chlorophyll is about 4 times higher near the coast** than offshore, and peaks in **October**.
+- **Penguins, sea lions, dolphins and whales** are seen mostly in the same coastal strip.
+- **Conclusion:** the coastal strip around the islands is the heart of the protected area, and spring is its most important season.
+
+---
+
+## 🌊 The problem
+
+In 2023, Chile created the **Humboldt Archipelago Multiple-Use Marine Protected Area**: about **5,750 km²** of ocean in the Atacama and Coquimbo regions. "Multiple-use" means people can still fish and work there; it is not a no-go zone.
+
+The area protects:
+1. native species of the Humboldt Current and the places where they feed and travel,
+2. islands and islets,
+3. the **upwelling** that feeds the whole food web,
+4. sustainable small-scale (artisanal) fishing.
+
+The area **has no management plan yet**. Nobody can protect 5,750 km² equally, so managers must decide where and when to focus. Many groups have interests here (fishers, tourism, industry, conservation), so that decision needs **evidence anyone can check**.
+
+**Our question:** which parts of the protected area, and which times of year, matter most for sea life, and why?
+
+---
+
+## 🔗 How this ocean works (the chain we follow)
+
+```
+🌬️ WIND             blows north along the coast, pushes surface water out to sea
+      ↓
+🌡️ COLD WATER       rises from the deep to replace it, bringing nutrients (upwelling)
+      ↓
+🌿 PHYTOPLANKTON    tiny sea plants feed on the nutrients and grow (seen as chlorophyll)
+      ↓
+🐟 SMALL FISH       anchovies and sardines eat the plankton
+      ↓
+🐧🐋 BIG ANIMALS     penguins, sea lions, dolphins and whales eat the fish
+```
+
+Each analysis in this project measures one link in this chain.
+
+| Analysis | Link in the chain | Question it answers |
+|---|---|---|
+| 🌬️ Wind | Cause | What drives the upwelling, and when is it strongest? |
+| 🌡️ Sea temperature | Evidence | Where does the cold deep water reach the surface? |
+| 🌿 Chlorophyll | Effect | Where and when is there the most food at the base of the food web? |
+| 🐧 Marine life | Who benefits | Are the animals found where the food is? |
+
+---
+
+## 📊 Data
+
+All data is free and public.
+
+| Data | Source | Details |
+|---|---|---|
+| Chlorophyll-a | Copernicus Marine `OCEANCOLOUR_GLO_BGC_L4_MY_009_104`, dataset `cmems_obs-oc_glo_bgc-plankton_my_l4-multi-4km_P1M` | Satellite, 4 km squares, monthly, Sep 2015 – Sep 2026 |
+| Sea surface temperature | Copernicus Marine `SST_GLO_SST_L4_REP_OBSERVATIONS_010_011` (OSTIA) | Satellite, about 5 km squares, daily |
+| Wind | Copernicus Marine `WIND_GLO_PHY_CLIMATE_L4_MY_012_003` | Satellite + model, 25 km squares, monthly, Jan 2015 – Jun 2026 |
+| Animal sightings | [GBIF](https://www.gbif.org) occurrence download | eBird, iNaturalist, Happywhale, Centro Ballena Azul and others |
+| Protected-area boundary | Ministry of Environment of Chile, [SIMBIO](https://simbio.mma.gob.cl/CbaAP/Details/2082) | Official KMZ file |
+
+Study box for downloads: latitude **−30.2 to −28.5**, longitude **−72.5 to −71.0** (wind: −31.0 to −27.5 and −74.0 to −71.0, because wind squares are larger).
+
+---
+
+## 🔍 Results
+
+### 1. 🌬️ Wind: the engine runs all year and peaks in spring
+
+The **northward** part of the wind is the "upwelling wind": on this north-south coast, it pushes surface water offshore. We sorted it into simple categories:
+
+| Category | Northward wind | Meaning |
+|---|---|---|
+| Downwelling | below 0 m/s | no upwelling |
+| Weak | 0–5 m/s | little upwelling |
+| Moderate | 5–7 m/s | steady upwelling |
+| Strong | 7 m/s or more | intense upwelling |
+
+*These thresholds are our own transparent choice, written at the top of the code so anyone can see or change them.*
+
+| Season | Northward wind | Category |
+|---|---|---|
+| May–June | about 5.5 m/s | Moderate (calmest) |
+| December–April | 6.4–6.9 m/s | Moderate |
+| **September–November** | **7.0–7.7 m/s (peak in October)** | **Strong** |
+
+- The wind blows north **in every month**, so upwelling never stops on average.
+- It is **strongest in October**, the same month as the chlorophyll peak, and **calmest in May–June**, when chlorophyll is lowest (seasonal match: correlation r = 0.91).
+- Some years are much weaker: in the worst autumn–winter months, the wind fell to 1–2 m/s.
+
+![Wind season](humboldt_wind_seasonal.png)
+![Wind category by latitude and month](humboldt_wind_latitude_month.png)
+
+### 2. 🌡️ Sea temperature: cold water rises near the coast
+
+<!-- TODO: fill in with the temperature results from our temperature analysis -->
+
+**What we look for:** if upwelling happens, the water near the coast should be **colder** than the water offshore, which is the opposite of normal, since shallow water usually warms faster. The temperature difference between offshore and coastal water is our **upwelling indicator**: the bigger the difference, the stronger the upwelling.
+
+| Zone | Average temperature (°C) |
+|---|---|
+| Coastal strip (0–10 km) | _to be filled_ |
+| Offshore (over 50 km) | _to be filled_ |
+| Difference (offshore − coast) | _to be filled_ |
+
+Key findings: _to be filled_
+
+<!-- ![Temperature map](humboldt_temperature_map.png) -->
+
+### 3. 🌿 Chlorophyll: the coastal strip is the productive core
+
+11-year average (September 2015 – September 2026, 133 months), median inside the protected area:
+
+| Zone | Chlorophyll-a (mg/m³) |
+|---|---|
+| **Coastal strip (0–10 km)** | **2.95** |
+| Inner zone (10–25 km) | 1.38 |
+| Middle zone (25–50 km) | 0.84 |
+| Offshore (over 50 km) | 0.68 |
+
+- The coastal strip has **about 4.3 times more** chlorophyll than offshore.
+- The richest water runs along the coast from **Isla Damas and Isla Choros southward**.
+- **Season:** lowest in winter (about 1.4 mg/m³ in May–July), highest in spring (**about 6.0 mg/m³ in October**). Offshore stays low all year.
+
+![Chlorophyll map](humboldt_chlorophyll_map.png)
+![Chlorophyll season](humboldt_chlorophyll_seasonal.png)
+
+### 4. 🐧 Marine life: animals are found where the food is
+
+We used **1,740 sightings** (2015–2026) of Humboldt penguins, South American sea lions, bottlenose dolphins, and blue, fin and humpback whales.
+
+| Zone (inside the protected area) | Sightings | Sightings per 100 km² |
+|---|---|---|
+| **Coast & islands (0–10 km)** | **518** | **64.2** |
+| Inner zone (10–25 km) | 107 | 6.6 |
+| Middle zone (25–50 km) | 10 | 0.4 |
+| Offshore (over 50 km) | 1 | 0.1 |
+
+- Sightings follow the **same coast-to-offshore pattern** as chlorophyll.
+- Whales gather around **Isla Chañaral** and **Isla Choros and Damas**.
+- Sightings peak in **January–February**, two to four months after the October chlorophyll peak. This fits the time energy takes to move up the food chain, but it is also the summer holiday season, when the most people are watching.
+
+![Wildlife map](humboldt_wildlife_map.png)
+![Wildlife season](humboldt_wildlife_seasonal.png)
+
+---
+
+## 🧩 How the analyses connect
+
+All datasets share **location** (latitude and longitude) and **time** (dates), so they can be placed on the same map and the same calendar.
+
+- **Same zones:** every satellite square gets its distance from the coast. Animal sightings are matched to the square they fall in, so chlorophyll, temperature and sightings are all compared in the same zones (0–10 km, 10–25 km, 25–50 km, over 50 km).
+- **Same calendar:** every dataset is averaged by month (January to December), so we can see which comes first.
+
+**The full picture:**
+
+| | Peak season | Where it is strongest |
+|---|---|---|
+| 🌬️ Wind | October | Along the whole coast |
+| 🌡️ Cold water | _to be filled_ | _to be filled_ |
+| 🌿 Chlorophyll | October | Coastal strip, near the islands |
+| 🐧 Animal sightings | January–February | Coastal strip, near the islands |
+
+---
+
+## 🎯 What this means for managing the protected area
+
+This project supports the hackathon goal of a **resilient, sustainable and well-governed ocean**:
+
+1. **Focus on the coastal strip around the islands.** It holds most of the food and most of the wildlife, while making up only a small part of the area.
+2. **Follow the calendar, not just the map.** September–November is when the ecosystem's engine runs hardest. Extra care in this season (for example around fishing pressure and disturbance near breeding colonies) protects the most life while leaving the rest of the year open for normal use.
+3. **Use the wind as an early warning.** Copernicus wind data is free and updated regularly. A weak spring wind means less food for wildlife in the following months, giving managers time to act, for example by easing fishing pressure on anchovy in a poor year.
+4. **Keep decisions transparent.** All steps, thresholds and data sources are written in the code and this README, so fishers, government and conservation groups can see exactly how each conclusion was reached.
+5. **The method travels.** The same code can be used for any marine protected area, including in Europe, by changing the boundary file and the study box.
+
+---
+
+## ⚠️ Limitations
+
+- **Satellites only see the surface.** Deep-sea habitats, which make up most of the area, are not measured.
+- **Animal sightings show where people looked,** not only where animals are. Most observers are on the coast, on boat tours near the islands, and out in summer. Some sightings even appear on land because people record their own position.
+- **The wind data is from about 180 km offshore** (one line of squares), not inside the area itself. Coastal winds may differ in detail.
+- **The wind–chlorophyll match is clear for the average season but weak month by month.** Other factors, such as El Niño, also affect individual years.
+- **Distance to the coast** is measured on the 4 km satellite grid, so it is approximate.
+- **The wind categories** are our own choice, not an official standard.
+
+---
+
+## 🚀 Next steps
+
+- Download wind for the full study box to map wind over the protected area itself.
+- Add fishing activity (Global Fishing Watch) as a pressure layer.
+- Combine wind, temperature, chlorophyll and wildlife into **one transparent priority map**.
+- Use systematic survey data instead of opportunistic sightings.
+- Test the method on a European marine protected area.
+
+---
+
+## 💻 How to run the code
+
+**Requirements:** Python 3 and these libraries:
+
+```bash
+pip install netCDF4 shapely matplotlib numpy scipy
+```
+
+**Run each analysis** (keep all scripts in the same folder; the wildlife script reuses the chlorophyll script):
+
+```bash
+python humboldt_chlorophyll_analysis.py  boundary.kmz  chlorophyll.nc
+python humboldt_wildlife_analysis.py     boundary.kmz  chlorophyll.nc  gbif_sightings.csv
+python humboldt_wind_analysis.py         boundary.kmz  wind.nc
+```
+
+Each script prints its steps as it runs and saves its maps (PNG) and tables (CSV) in the current folder. Run the chlorophyll script before the wildlife script, because the wildlife script uses its seasonal table.
+
+### Repository contents
+
+| File | What it is |
+|---|---|
+| `humboldt_chlorophyll_analysis.py` | Chlorophyll: boundary, zones, map, seasonal cycle |
+| `humboldt_wildlife_analysis.py` | Animal sightings compared with chlorophyll |
+| `humboldt_wind_analysis.py` | Wind categories by latitude and month, seasonal cycle |
+| _temperature script_ | _to be added_ |
+| `*.png` | Maps and charts |
+| `*.csv` | Result tables |
+
+### How the code is organised
+
+Every script follows the same simple pattern:
+
+1. **Description** at the top: the question, the data and the steps, in plain English.
+2. **Settings:** study box, zones and categories, all in one place.
+3. **One function per step:** read the boundary → read the data → cut to the area → compare zones → draw maps and charts → save tables.
+4. **Start button** at the bottom (`if __name__ == "__main__":`), which runs the steps in order.
+
+---
+
+## 👥 Team
+
+**Ocean Star ⭐**
+
+_Add team member names and roles here._
+
+## 🙏 Acknowledgements
+
+- Copernicus Marine Service for free ocean data
+- GBIF and all its contributors (eBird, iNaturalist, Happywhale, Centro Ballena Azul and others)
+- Ministry of Environment of Chile (SIMBIO) for the official boundary
