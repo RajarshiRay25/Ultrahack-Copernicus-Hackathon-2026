@@ -5,6 +5,7 @@
 **Yunseon Lee -  University of Helsinki** || 
 **Rodrigo Andrés Jara Godoy -  Change of North Chile**
 
+### Demo - https://claude.ai/artifact/TvYFjbv2wNTrNroCiFCrQC#plan 
 **Team Ocean Star ⭐ | Copernicus Marine Service Hackathon 2026**
 
 > Using free satellite data from Copernicus Marine, we show **where** and **when** Chile's Humboldt Archipelago marine protected area is most alive, and **why**. The result is simple, transparent evidence that managers can use to decide where and when to focus protection.
